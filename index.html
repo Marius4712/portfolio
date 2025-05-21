@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Marius Vacque, urbaniste et designer passionné par les projets solidaires et durables.">
+  <meta name="keywords" content="portfolio, urbanisme, design, solidarités, Marius Vacque">
+  <meta name="author" content="Marius Vacque">
+  <!-- Open Graph pour partage sur réseaux sociaux -->
+  <meta property="og:title" content="Marius Vacque - Portfolio">
+  <meta property="og:description" content="Découvrez les projets d'urbanisme et de design solidaire de Marius Vacque.">
+  <meta property="og:image" content="https://www.festivaldessolidarites.org/wp-content/uploads/2023/10/visuel-festisol-2023.jpg">
+  <meta property="og:url" content="https://mariusvacqueportfolio.example.com">
+  <meta property="og:type" content="website">
+  <!-- Favicon FESTISOL -->
+  <link rel="icon" type="image/jpeg" href="https://www.festivaldessolidarites.org/wp-content/uploads/2023/10/logo-festisol-2023.png">
+  <title>Marius Vacque - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* Variables CSS */
+    :root {
+      --primary-color: #ff8c42;
+      --hover-color: #ff6f61;
+      --text-dark: #333;
+      --text-light: #fff;
+      --background-light: #f9f9f9;
+      --background-dark: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: #fff;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.9);
+      color: var(--text-light);
+      padding: 15px 20px;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav a {
+      font-size: 1rem;
+      padding: 10px;
+      position: relative;
+    }
+
+    nav a.active {
+      color: var(--primary-color);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background: var(--primary-color);
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after, nav a.active::after {
+      width: 100%;
+    }
+
+    /* Section Accueil */
+    #accueil {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background-attachment: fixed;
+    }
+
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.9;
+    }
+
+    .video-background video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .accueil-content {
+      z-index: 1;
+      text-align: center;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .accueil-content h1 {
+      font-size: 4.5rem;
+      margin: 0;
+      color: var(--text-light);
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .btn {
+      background: var(--primary-color);
+      color: var(--text-light);
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+      margin-top: 70px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: var(--hover-color);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Section Projets */
+    #projets {
+      padding: 80px 20px;
+      text-align: center;
+      background: var(--background-light);
+      animation: fadeIn 1s ease-in;
+    }
+
+    .projets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .projet {
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .projet:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .projet img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      loading: lazy;
+    }
+
+    .projet h3 {
+      margin: 15px 0 5px;
+      font-size: 1.4rem;
+      color: var(--text-dark);
+    }
+
+    .projet p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    /* Détails FESTISOL */
+    #festisol-details {
+      display: none;
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--background-light);
+      animation: fadeIn 1s ease-in;
+    }
+
+    #festisol-details.active {
+      display: block;
+    }
+
+    .festisol-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .festisol-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .festisol-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .festisol-gallery {
+      flex: 1;
+      min-width: 300px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .festisol-gallery img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      loading: lazy;
+    }
+
+    .festisol-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-btn {
+      display: inline-block;
+      background: var(--primary-color);
+      color: var(--text-light);
+      padding: 12px 24px;
+      border-radius: 8px;
+      margin-top: 40px;
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+
+    .back-btn:hover {
+      background: var(--hover-color);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Section À propos */
+    #apropos {
+      padding: 80px 20px;
+      text-align: center;
+      background: #fff;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .apropos-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .apropos-content img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      loading: lazy;
+    }
+
+    .apropos-text {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+    }
+
+    /* Section Contact */
+    #contact {
+      position: relative;
+      padding: 80px 20px;
+      text-align: center;
+      color: var(--text-light);
+      background: rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .contact-video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.9;
+    }
+
+    .contact-video-background video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .contact-content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form label {
+      text-align: left;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 5px;
+    }
+
+    form input,
+    form textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.95);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+    }
+
+    form textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    form button {
+      background: var(--primary-color);
+      color: var(--text-light);
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+      font-size: 1rem;
+    }
+
+    form button:hover {
+      background: var(--hover-color);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--background-dark);
+      color: var(--text-light);
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .accueil-content h1 {
+        font-size: 3rem;
+      }
+
+      .apropos-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .apropos-text {
+        text-align: center;
+      }
+
+      .festisol-content {
+        flex-direction: column;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .accueil-content h1 {
+        font-size: 2rem;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+
+      .projets-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav role="navigation">
+    <a href="#accueil" class="nav-link">Accueil</a>
+    <a href="#projets" class="nav-link">Projets</a>
+    <a href="#apropos" class="nav-link">À propos</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+
+  <!-- Section Accueil -->
+  <section id="accueil" role="banner">
+    <div class="video-background">
+      <video autoplay muted loop playsinline preload="auto">
+        <source src="https://videos.pexels.com/video-files/3166326/3166326-uhd_3840_2160_30fps.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+      </video>
+    </div>
+    <div class="accueil-content">
+      <h1>VACQUE Marius</h1>
+      <a href="#projets" class="btn" role="button" aria-label="Voir mon portfolio">Mon Portfolio</a>
+    </div>
+  </section>
+
+  <!-- Section Projets -->
+  <section id="projets" role="region" aria-labelledby="projets-heading">
+    <h2 id="projets-heading">Mes Projets</h2>
+    <div class="projets-grid">
+      <div class="projet" onclick="showFestisolDetails()" role="button" aria-label="Voir les détails de FESTISOL 2024">
+        <img src="https://www.festivaldessolidarites.org/wp-content/uploads/2023/10/visuel-festisol-2023.jpg" alt="Affiche FESTISOL 2024" loading="lazy">
+        <h3>FESTISOL</h3>
+        <p>Participation à l'édition 2024 du Festival des Solidarités</p>
+      </div>
+      <div class="projet">
+        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Parc urbain" loading="lazy">
+        <h3>Parc urbain Y</h3>
+        <p>Conception d'un espace vert connecté pour une ville plus respirable.</p>
+      </div>
+      <div class="projet">
+        <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mobilier urbain" loading="lazy">
+        <h3>Mobilier urbain Z</h3>
+        <p>Design fonctionnel et esthétique pour améliorer l'espace public.</p>
+      </div>
+      <div class="projet">
+        <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Plan directeur" loading="lazy">
+        <h3>Plan directeur pour la ville de A</h3>
+        <p>Vision à long terme pour une ville durable et inclusive.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Détails FESTISOL -->
+  <section id="festisol-details" role="region" aria-labelledby="festisol-heading">
+    <div class="festisol-header">
+      <h2 id="festisol-heading">FESTISOL 2024</h2>
+      <p>Festival des Solidarités - Édition 2024</p>
+    </div>
+    <div class="festisol-content">
+      <div class="festisol-text">
+        <h3>Ma contribution</h3>
+        <p>Dans le cadre de l'édition 2024 du Festival des Solidarités, j'ai eu l'opportunité de participer activement à plusieurs aspects de l'événement.</p>
+        <h3>Approche créative</h3>
+        <p>Mon travail s'est articulé autour de trois axes principaux :</p>
+        <ol>
+          <li>Accessibilité : rendre l'événement inclusif pour tous les publics.</li>
+          <li>Durabilité : utilisation de matériaux écologiques pour les installations.</li>
+          <li>Interactivité : créer des espaces favorisant les échanges.</li>
+        </ol>
+      </div>
+      <div class="festisol-gallery">
+        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Atelier participatif FESTISOL" loading="lazy">
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="#projets" class="back-btn" role="button" aria-label="Retour aux projets">Retour aux projets</a>
+    </div>
+  </section>
+
+  <!-- Section À propos -->
+  <section id="apropos" role="region" aria-labelledby="apropos-heading">
+    <h2 id="apropos-heading">À propos</h2>
+    <div class="apropos-content">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Portrait de Marius Vacque" loading="lazy">
+      <div class="apropos-text">
+        <h3>Qui suis-je ?</h3>
+        <p>Passionné par l'urbanisme et les projets solidaires, je mets mes compétences en conception spatiale et en gestion de projet au service d'initiatives qui créent du lien social et améliorent notre cadre de vie.</p>
+        <p>Diplômé de [Nom de l'école/université], j'ai développé une approche pluridisciplinaire qui allie créativité, technique et sens du collectif. Mon expérience avec le Festival des Solidarités représente parfaitement cette philosophie de travail.</p>
+        <p>Je suis actuellement à la recherche de nouvelles opportunités qui me permettraient d'appliquer cette vision à des projets urbains innovants.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Contact -->
+  <section id="contact" role="region" aria-labelledby="contact-heading">
+    <div class="contact-video-background">
+      <video autoplay muted loop playsinline preload="auto">
+        <source src="https://videos.pexels.com/video-files/2292093/2292093-uhd_3840_2160_30fps.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+      </video>
+    </div>
+    <div class="contact-content">
+      <h2 id="contact-heading">Contact</h2>
+      <form action="#" method="post" id="contact-form" novalidate>
+        <label for="name">Votre nom</label>
+        <input type="text" id="name" name="name" placeholder="Votre nom" required aria-required="true" aria-label="Votre nom">
+        <label for="email">Votre email</label>
+        <input type="email" id="email" name="email" placeholder="Votre email" required aria-required="true" aria-label="Votre email">
+        <label for="message">Votre message</label>
+        <textarea id="message" name="message" placeholder="Votre message" required aria-required="true" aria-label="Votre message"></textarea>
+        <button type="submit" role="button" aria-label="Envoyer le message">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>© 2025 Marius Vacque. Tous droits réservés.</p>
+    <p style="margin-top: 10px; font-size: 0.9rem;">Portfolio réalisé avec passion</p>
+  </footer>
+
+  <script>
+    // Gestion de l'affichage des détails FESTISOL
+    function showFestisolDetails() {
+      document.getElementById('projets').style.display = 'none';
+      document.getElementById('apropos').style.display = 'none';
+      document.getElementById('contact').style.display = 'none';
+      document.querySelector('footer').style.display = 'none';
+      document.getElementById('festisol-details').classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Gestion du retour aux projets
+    document.querySelector('.back-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('festisol-details').classList.remove('active');
+      document.getElementById('projets').style.display = 'block';
+      document.getElementById('apropos').style.display = 'block';
+      document.getElementById('contact').style.display = 'block';
+      document.querySelector('footer').style.display = 'block';
+      document.getElementById('projets').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Navigation active
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 60) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Validation du formulaire
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = this.querySelector('#name').value.trim();
+      const email = this.querySelector('#email').value.trim();
+      const message = this.querySelector('#message').value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!name || !email || !message) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+      if (!emailRegex.test(email)) {
+        alert('Veuillez entrer une adresse email valide.');
+        return;
+      }
+
+      alert('Message envoyé avec succès !');
+      this.reset();
+    });
+
+    // Préchargement des vidéos
+    document.querySelectorAll('video').forEach(video => {
+      video.setAttribute('loading', 'lazy');
+      video.setAttribute('preload', 'auto');
+    });
+  </script>
+</body>
+</html>
