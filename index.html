@@ -222,6 +222,16 @@
       display: block;
     }
 
+    .festisol-cover {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      loading: lazy;
+    }
+
     .festisol-header {
       text-align: center;
       margin-bottom: 50px;
@@ -423,6 +433,10 @@
         flex-direction: column;
         gap: 15px;
       }
+
+      .festisol-cover {
+        max-height: 300px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -437,6 +451,10 @@
 
       .projets-grid {
         grid-template-columns: 1fr;
+      }
+
+      .festisol-cover {
+        max-height: 200px;
       }
     }
   </style>
@@ -493,6 +511,7 @@
 
   <!-- Détails FESTISOL -->
   <section id="festisol-details" role="region" aria-labelledby="festisol-heading">
+    <img src="Autocollant_festisol2024.png" alt="Image de couverture FESTISOL 2024" class="festisol-cover">
     <div class="festisol-header">
       <h2 id="festisol-heading">FESTISOL 2024</h2>
       <p>Festival des Solidarités - Édition 2024</p>
