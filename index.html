@@ -208,8 +208,11 @@
       color: #666;
     }
 
-    /* Détails FESTISOL */
-    #festisol-details {
+    /* Détails des projets */
+    #festisol-details,
+    #stages-details,
+    #royan-details,
+    #fiches-details {
       display: none;
       padding: 80px 20px;
       max-width: 1200px;
@@ -218,11 +221,14 @@
       animation: fadeIn 1s ease-in;
     }
 
-    #festisol-details.active {
+    #festisol-details.active,
+    #stages-details.active,
+    #royan-details.active,
+    #fiches-details.active {
       display: block;
     }
 
-    .festisol-cover {
+    .project-cover {
       width: 100%;
       max-height: 400px;
       object-fit: cover;
@@ -232,47 +238,21 @@
       loading: lazy;
     }
 
-    .festisol-header {
+    .project-header {
       text-align: center;
       margin-bottom: 50px;
     }
 
-    .festisol-content {
+    .project-content {
       display: flex;
       flex-wrap: wrap;
       gap: 40px;
       align-items: flex-start;
     }
 
-    .festisol-text {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .festisol-gallery {
-      flex: 1;
-      min-width: 300px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .festisol-gallery img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-      loading: lazy;
-    }
-
-    .festisol-gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    }
-
     .back-btn {
       display: inline-block;
-      background: var(--primary-color);
+      background: #000000; /* Noir */
       color: var(--text-light);
       padding: 12px 24px;
       border-radius: 8px;
@@ -281,7 +261,7 @@
     }
 
     .back-btn:hover {
-      background: var(--hover-color);
+      background: #333333; /* Gris foncé */
       transform: translateY(-3px);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
@@ -290,33 +270,56 @@
     #apropos {
       padding: 80px 20px;
       text-align: center;
-      background: #fff;
+      background: linear-gradient(135deg, #f9f9f9, #f1f1f1); /* Dégradé subtil */
       animation: fadeIn 1s ease-in;
     }
 
-    .apropos-content {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      justify-content: center;
+    #apropos h2 {
+      font-size: 2.8rem;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+      position: relative;
+      margin-bottom: 30px;
     }
 
-    .apropos-content img {
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      loading: lazy;
+    #apropos h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: var(--primary-color);
+      margin: 10px auto;
+    }
+
+    .apropos-content {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
     }
 
     .apropos-text {
-      flex: 1;
-      min-width: 300px;
-      text-align: left;
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .apropos-text h3 {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .apropos-text p {
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Section Contact */
@@ -398,13 +401,13 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
     }
 
-    /* Ajout pour le bouton Envoyer en noir */
+    /* Bouton Envoyer en noir */
     #contact form button {
       background: #000000; /* Noir */
     }
 
     #contact form button:hover {
-      background: #333333; /* Gris foncé au survol pour contraste */
+      background: #333333; /* Gris foncé */
       transform: translateY(-3px);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
     }
@@ -428,16 +431,19 @@
       }
 
       .apropos-content {
-        flex-direction: column;
-        text-align: center;
+        padding: 20px;
+      }
+
+      #apropos h2 {
+        font-size: 2.2rem;
+      }
+
+      .apropos-text h3 {
+        font-size: 1.5rem;
       }
 
       .apropos-text {
-        text-align: center;
-      }
-
-      .festisol-content {
-        flex-direction: column;
+        font-size: 1rem;
       }
 
       nav {
@@ -445,7 +451,7 @@
         gap: 15px;
       }
 
-      .festisol-cover {
+      .project-cover {
         max-height: 300px;
       }
     }
@@ -464,7 +470,7 @@
         grid-template-columns: 1fr;
       }
 
-      .festisol-cover {
+      .project-cover {
         max-height: 200px;
       }
     }
@@ -502,46 +508,75 @@
         <h3>FESTISOL</h3>
         <p>Participation à l'édition 2024 du Festival des Solidarités</p>
       </div>
-      <div class="projet">
-        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Parc urbain" loading="lazy">
-        <h3>Parc urbain Y</h3>
-        <p>Conception d'un espace vert connecté pour une ville plus respirable.</p>
+      <div class="projet" onclick="showStagesDetails()" role="button" aria-label="Voir les détails de Mes stages">
+        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mes stages" loading="lazy">
+        <h3>Mes stages</h3>
       </div>
-      <div class="projet">
-        <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mobilier urbain" loading="lazy">
-        <h3>Mobilier urbain Z</h3>
-        <p>Design fonctionnel et esthétique pour améliorer l'espace public.</p>
+      <div class="projet" onclick="showRoyanDetails()" role="button" aria-label="Voir les détails de Collaboration avec la mairie de Royan">
+        <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Collaboration avec la mairie de Royan" loading="lazy">
+        <h3>Collaboration avec la mairie de Royan</h3>
       </div>
-      <div class="projet">
-        <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Plan directeur" loading="lazy">
-        <h3>Plan directeur pour la ville de A</h3>
-        <p>Vision à long terme pour une ville durable et inclusive.</p>
+      <div class="projet" onclick="showFichesDetails()" role="button" aria-label="Voir les détails de Fiches-projets de revitalisation">
+        <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Fiches-projets de revitalisation" loading="lazy">
+        <h3>Fiches-projets de revitalisation</h3>
       </div>
     </div>
   </section>
 
   <!-- Détails FESTISOL -->
   <section id="festisol-details" role="region" aria-labelledby="festisol-heading">
-    <img src="Autocollant_festisol2024.png" alt="Image de couverture FESTISOL 2024" class="festisol-cover">
-    <div class="festisol-header">
+    <img src="Autocollant_festisol2024.png" alt="Image de couverture FESTISOL 2024" class="project-cover">
+    <div class="project-header">
       <h2 id="festisol-heading">FESTISOL 2024</h2>
       <p>Festival des Solidarités - Édition 2024</p>
     </div>
-    <div class="festisol-content">
-      <div class="festisol-text">
-        <h3>Ma contribution</h3>
-        <p>Dans le cadre de l'édition 2024 du Festival des Solidarités, j'ai eu l'opportunité de participer activement à plusieurs aspects de l'événement.</p>
-        <h3>Approche créative</h3>
-        <p>Mon travail s'est articulé autour de trois axes principaux :</p>
-        <ol>
-          <li>Accessibilité : rendre l'événement inclusif pour tous les publics.</li>
-          <li>Durabilité : utilisation de matériaux écologiques pour les installations.</li>
-          <li>Interactivité : créer des espaces favorisant les échanges.</li>
-        </ol>
-      </div>
-      <div class="festisol-gallery">
-        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Atelier participatif FESTISOL" loading="lazy">
-      </div>
+    <div class="project-content">
+      <!-- Contenu vide -->
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="#projets" class="back-btn" role="button" aria-label="Retour aux projets">Retour aux projets</a>
+    </div>
+  </section>
+
+  <!-- Détails Mes stages -->
+  <section id="stages-details" role="region" aria-labelledby="stages-heading">
+    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Image de couverture Mes stages" class="project-cover">
+    <div class="project-header">
+      <h2 id="stages-heading">Mes stages</h2>
+      <p>Détails du projet Mes stages</p>
+    </div>
+    <div class="project-content">
+      <!-- Contenu vide -->
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="#projets" class="back-btn" role="button" aria-label="Retour aux projets">Retour aux projets</a>
+    </div>
+  </section>
+
+  <!-- Détails Collaboration avec la mairie de Royan -->
+  <section id="royan-details" role="region" aria-labelledby="royan-heading">
+    <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Image de couverture Collaboration avec la mairie de Royan" class="project-cover">
+    <div class="project-header">
+      <h2 id="royan-heading">Collaboration avec la mairie de Royan</h2>
+      <p>Détails du projet Collaboration avec la mairie de Royan</p>
+    </div>
+    <div class="project-content">
+      <!-- Contenu vide -->
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="#projets" class="back-btn" role="button" aria-label="Retour aux projets">Retour aux projets</a>
+    </div>
+  </section>
+
+  <!-- Détails Fiches-projets de revitalisation -->
+  <section id="fiches-details" role="region" aria-labelledby="fiches-heading">
+    <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Image de couverture Fiches-projets de revitalisation" class="project-cover">
+    <div class="project-header">
+      <h2 id="fiches-heading">Fiches-projets de revitalisation</h2>
+      <p>Détails du projet Fiches-projets de revitalisation</p>
+    </div>
+    <div class="project-content">
+      <!-- Contenu vide -->
     </div>
     <div style="text-align: center; margin-top: 40px;">
       <a href="#projets" class="back-btn" role="button" aria-label="Retour aux projets">Retour aux projets</a>
@@ -552,12 +587,12 @@
   <section id="apropos" role="region" aria-labelledby="apropos-heading">
     <h2 id="apropos-heading">À propos</h2>
     <div class="apropos-content">
-      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Portrait de Marius Vacque" loading="lazy">
       <div class="apropos-text">
         <h3>Qui suis-je ?</h3>
-        <p>Passionné par l'urbanisme et les projets solidaires, je mets mes compétences en conception spatiale et en gestion de projet au service d'initiatives qui créent du lien social et améliorent notre cadre de vie.</p>
-        <p>Diplômé de [Nom de l'école/université], j'ai développé une approche pluridisciplinaire qui allie créativité, technique et sens du collectif. Mon expérience avec le Festival des Solidarités représente parfaitement cette philosophie de travail.</p>
-        <p>Je suis actuellement à la recherche de nouvelles opportunités qui me permettraient d'appliquer cette vision à des projets urbains innovants.</p>
+        <p>Actuellement étudiant en BUT Villes et Territoires Durables, je m’intéresse particulièrement à l’urbanisme et aux dynamiques de revitalisation des territoires. Originaire du Lot-et-Garonne, je suis animé par l’envie de redonner vie à nos centres-bourgs et de renforcer les liens sociaux à l’échelle locale.</p>
+        <p>Ma formation me permet de croiser les enjeux d’aménagement, de durabilité et de participation citoyenne, tout en développant une approche concrète et sensible du territoire.</p>
+        <p>Très impliqué dans la vie associative, je joue au rugby à Miramont-de-Guyenne, mon club de toujours. En plus d’être joueur, je fais partie de l’association des joueurs qui organise les événements du club. Je suis aussi engagé dans la formation des jeunes et l’accompagnement des seniors, car pour moi, le sport est un vecteur puissant de cohésion sociale et d’engagement territorial.</p>
+        <p>Entre terrain et projet, j’aime contribuer à des initiatives qui font bouger les lignes, en mêlant passion, collectif et ancrage local.</p>
       </div>
     </div>
   </section>
@@ -572,7 +607,7 @@
     </div>
     <div class="contact-content">
       <h2 id="contact-heading">Contact</h2>
-      <form action="#" method="post" id="contact-form" novalidate>
+      <form action="send_email.php" method="post" id="contact-form" novalidate>
         <label for="name">Votre nom</label>
         <input type="text" id="name" name="name" placeholder="Votre nom" required aria-required="true" aria-label="Votre nom">
         <label for="email">Votre email</label>
@@ -591,25 +626,56 @@
   </footer>
 
   <script>
-    // Gestion de l'affichage des détails FESTISOL
+    // Gestion de l'affichage des détails des projets
     function showFestisolDetails() {
-      document.getElementById('projets').style.display = 'none';
-      document.getElementById('apropos').style.display = 'none';
-      document.getElementById('contact').style.display = 'none';
-      document.querySelector('footer').style.display = 'none';
+      hideAllSections();
       document.getElementById('festisol-details').classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Gestion du retour aux projets
-    document.querySelector('.back-btn').addEventListener('click', function(e) {
-      e.preventDefault();
+    function showStagesDetails() {
+      hideAllSections();
+      document.getElementById('stages-details').classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showRoyanDetails() {
+      hideAllSections();
+      document.getElementById('royan-details').classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showFichesDetails() {
+      hideAllSections();
+      document.getElementById('fiches-details').classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function hideAllSections() {
+      document.getElementById('projets').style.display = 'none';
+      document.getElementById('apropos').style.display = 'none';
+      document.getElementById('contact').style.display = 'none';
+      document.querySelector('footer').style.display = 'none';
       document.getElementById('festisol-details').classList.remove('active');
-      document.getElementById('projets').style.display = 'block';
-      document.getElementById('apropos').style.display = 'block';
-      document.getElementById('contact').style.display = 'block';
-      document.querySelector('footer').style.display = 'block';
-      document.getElementById('projets').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('stages-details').classList.remove('active');
+      document.getElementById('royan-details').classList.remove('active');
+      document.getElementById('fiches-details').classList.remove('active');
+    }
+
+    // Gestion du retour aux projets
+    document.querySelectorAll('.back-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('festisol-details').classList.remove('active');
+        document.getElementById('stages-details').classList.remove('active');
+        document.getElementById('royan-details').classList.remove('active');
+        document.getElementById('fiches-details').classList.remove('active');
+        document.getElementById('projets').style.display = 'block';
+        document.getElementById('apropos').style.display = 'block';
+        document.getElementById('contact').style.display = 'block';
+        document.querySelector('footer').style.display = 'block';
+        document.getElementById('projets').scrollIntoView({ behavior: 'smooth' });
+      });
     });
 
     // Navigation active
@@ -633,23 +699,22 @@
 
     // Validation du formulaire
     document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
       const name = this.querySelector('#name').value.trim();
       const email = this.querySelector('#email').value.trim();
       const message = this.querySelector('#message').value.trim();
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
       if (!name || !email || !message) {
+        e.preventDefault();
         alert('Veuillez remplir tous les champs.');
         return;
       }
       if (!emailRegex.test(email)) {
+        e.preventDefault();
         alert('Veuillez entrer une adresse email valide.');
         return;
       }
-
-      alert('Message envoyé avec succès !');
-      this.reset();
+      // La soumission du formulaire se fera via PHP si la validation passe
     });
 
     // Préchargement des vidéos
