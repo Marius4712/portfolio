@@ -266,6 +266,33 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
 
+    /* Galerie d'images pour fiches-details */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .gallery-item {
+      text-align: center;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      loading: lazy;
+    }
+
+    .gallery-item p {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
     /* Section À propos */
     #apropos {
       padding: 80px 20px;
@@ -454,6 +481,10 @@
       .project-cover {
         max-height: 300px;
       }
+
+      .gallery-item img {
+        max-height: 250px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -471,6 +502,10 @@
       }
 
       .project-cover {
+        max-height: 200px;
+      }
+
+      .gallery-item img {
         max-height: 200px;
       }
     }
@@ -586,7 +621,184 @@
       <p>Détails du projet Fiches-projets de revitalisation</p>
     </div>
     <div class="project-content">
-      <!-- Contenu vide -->
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/1.png" alt="Image 1" loading="lazy">
+          <p>Image 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/2.png" alt="Image 2" loading="lazy">
+          <p>Image 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/3.png" alt="Image 3" loading="lazy">
+          <p>Image 3</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/4.png" alt="Image 4" loading="lazy">
+          <p>Image 4</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/5.png" alt="Image 5" loading="lazy">
+          <p>Image 5</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/6.png" alt="Image 6" loading="lazy">
+          <p>Image 6</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/7 (1).png" alt="Image 7 (1)" loading="lazy">
+          <p>Image 7 (1)</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/7 (2).png" alt="Image 7 (2)" loading="lazy">
+          <p>Image 7 (2)</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Aiguillon ( RÉNOVATION ET EXTENSION DU CINÉMA D’AIGUILLON 1).png" alt="Rénovation et extension du cinéma d’Aiguillon 1" loading="lazy">
+          <p>Rénovation et extension du cinéma d’Aiguillon 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Aiguillon ( RÉNOVATION ET EXTENSION DU CINÉMA D’AIGUILLON 2).png" alt="Rénovation et extension du cinéma d’Aiguillon 2" loading="lazy">
+          <p>Rénovation et extension du cinéma d’Aiguillon 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Aiguillon ( AMÉNAGEMENT DE LA PLAGE SUR LE LOT À AIGUILLON 1).png" alt="Aménagement de la plage sur le Lot à Aiguillon 1" loading="lazy">
+          <p>Aménagement de la plage sur le Lot à Aiguillon 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Aiguillon ( AMÉNAGEMENT DE LA PLAGE SUR LE LOT À AIGUILLON 2).png" alt="Aménagement de la plage sur le Lot à Aiguillon 2" loading="lazy">
+          <p>Aménagement de la plage sur le Lot à Aiguillon 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Aiguillon ( CRÉATION D’UNE MAISON DE SANTÉ À AIGUILLON 1 ).png" alt="Création d’une maison de santé à Aiguillon 1" loading="lazy">
+          <p>Création d’une maison de santé à Aiguillon 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Aiguillon ( CRÉATION D’UNE MAISON DE SANTÉ À AIGUILLON 2 ).png" alt="Création d’une maison de santé à Aiguillon 2" loading="lazy">
+          <p>Création d’une maison de santé à Aiguillon 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Casteljaloux ( Réhabilitation et reconversion de l'ancien hôpital en logements et services 1).png" alt="Réhabilitation et reconversion de l'ancien hôpital en logements et services 1" loading="lazy">
+          <p>Réhabilitation et reconversion de l'ancien hôpital en logements et services 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Casteljaloux ( Réhabilitation et reconversion de l'ancien hôpital en logements et services 2).png" alt="Réhabilitation et reconversion de l'ancien hôpital en logements et services 2" loading="lazy">
+          <p>Réhabilitation et reconversion de l'ancien hôpital en logements et services 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Castelmoron-sur-Lot ( CRÉATION D’UNE LIAISON DOUCE ) 1.png" alt="Création d’une liaison douce 1" loading="lazy">
+          <p>Création d’une liaison douce 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Castelmoron-sur-Lot ( CRÉATION D’UNE LIAISON DOUCE ) 2.png" alt="Création d’une liaison douce 2" loading="lazy">
+          <p>Création d’une liaison douce 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Castelmoron-sur-Lot ( CRÉER UNE MAISON DE SANTÉ CASTELMORON–TOMBEBŒUF) 1.png" alt="Créer une maison de santé Castelmoron-Tombeboeuf 1" loading="lazy">
+          <p>Créer une maison de santé Castelmoron-Tombeboeuf 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Castelmoron-sur-Lot ( CRÉER UNE MAISON DE SANTÉ CASTELMORON–TOMBEBŒUF) 2.png" alt="Créer une maison de santé Castelmoron-Tombeboeuf 2" loading="lazy">
+          <p>Créer une maison de santé Castelmoron-Tombeboeuf 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Castillonnès ( RÉHABILITATION DE LA MAISON DE LA BASTIDE) 1.png" alt="Réhabilitation de la maison de la bastide 1" loading="lazy">
+          <p>Réhabilitation de la maison de la bastide 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Castillonnès ( RÉHABILITATION DE LA MAISON DE LA BASTIDE) 2.png" alt="Réhabilitation de la maison de la bastide 2" loading="lazy">
+          <p>Réhabilitation de la maison de la bastide 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Duras ( Construction d’un espace culturel multifonctionnel en cœur de bourg 1).png" alt="Construction d’un espace culturel multifonctionnel en cœur de bourg 1" loading="lazy">
+          <p>Construction d’un espace culturel multifonctionnel en cœur de bourg 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Duras ( Construction d’un espace culturel multifonctionnel en cœur de bourg 2).png" alt="Construction d’un espace culturel multifonctionnel en cœur de bourg 2" loading="lazy">
+          <p>Construction d’un espace culturel multifonctionnel en cœur de bourg 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet La Miramont-de-Guyenne ( PARC DE LA DOURDÈNE 1  ).png" alt="Parc de la Dourdène 1" loading="lazy">
+          <p>Parc de la Dourdène 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet La Miramont-de-Guyenne ( PARC DE LA DOURDÈNE 2  ).png" alt="Parc de la Dourdène 2" loading="lazy">
+          <p>Parc de la Dourdène 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet La Miramont-de-Guyenne ( requalification de la friche commerciale « Pimtou 1 ).png" alt="Requalification de la friche commerciale Pimtou 1" loading="lazy">
+          <p>Requalification de la friche commerciale Pimtou 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet La Miramont-de-Guyenne ( requalification de la friche commerciale « Pimtou 2 ).png" alt="Requalification de la friche commerciale Pimtou 2" loading="lazy">
+          <p>Requalification de la friche commerciale Pimtou 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet La Miramont-de-Guyenne (Parc des équipements du boulevard Jules Ferry  théâtre de verdure et scène ouverte à Miramont 1  ).png" alt="Parc des équipements du boulevard Jules Ferry théâtre de verdure et scène ouverte à Miramont 1" loading="lazy">
+          <p>Parc des équipements du boulevard Jules Ferry théâtre de verdure et scène ouverte à Miramont 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet La Miramont-de-Guyenne (Parc des équipements du boulevard Jules Ferry  théâtre de verdure et scène ouverte à Miramont 2  ).png" alt="Parc des équipements du boulevard Jules Ferry théâtre de verdure et scène ouverte à Miramont 2" loading="lazy">
+          <p>Parc des équipements du boulevard Jules Ferry théâtre de verdure et scène ouverte à Miramont 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet La Miramont-de-Guyenne (RECONVERSION DE LA FRICHE POINT SERVICE EN HABITAT SÉNIOR 1  ).png" alt="Reconversion de la friche Point Service en habitat sénior 1" loading="lazy">
+          <p>Reconversion de la friche Point Service en habitat sénior 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet La Miramont-de-Guyenne (RECONVERSION DE LA FRICHE POINT SERVICE EN HABITAT SÉNIOR 2  ).png" alt="Reconversion de la friche Point Service en habitat sénior 2" loading="lazy">
+          <p>Reconversion de la friche Point Service en habitat sénior 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet La Miramont-de-Guyenne (Reconversion de l'îlot Soussial à Miramont-de-Guyenne 1  ).png" alt="Reconversion de l'îlot Soussial à Miramont-de-Guyenne 1" loading="lazy">
+          <p>Reconversion de l'îlot Soussial à Miramont-de-Guyenne 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet La Miramont-de-Guyenne (Reconversion de l'îlot Soussial à Miramont-de-Guyenne 2  ).png" alt="Reconversion de l'îlot Soussial à Miramont-de-Guyenne 2" loading="lazy">
+          <p>Reconversion de l'îlot Soussial à Miramont-de-Guyenne 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Monflanquin ( Ecole maternelle - Requalification de la cour ) 1.png" alt="École maternelle - Requalification de la cour 1" loading="lazy">
+          <p>École maternelle - Requalification de la cour 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Monflanquin ( Ecole maternelle - Requalification de la cour ) 2.png" alt="École maternelle - Requalification de la cour 2" loading="lazy">
+          <p>École maternelle - Requalification de la cour 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Nérac ( RÉAMÉNAGEMENT DE LA PLACE DU FOIRAIL À NÉRAC 1).png" alt="Réaménagement de la place du Foirail à Nérac 1" loading="lazy">
+          <p>Réaménagement de la place du Foirail à Nérac 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Nérac ( RÉAMÉNAGEMENT DE LA PLACE DU FOIRAIL À NÉRAC 2 ).png" alt="Réaménagement de la place du Foirail à Nérac 2" loading="lazy">
+          <p>Réaménagement de la place du Foirail à Nérac 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Port-Sainte-Marie ( Lutter contre la vacance des logements en centre-bourg 1).png" alt="Lutter contre la vacance des logements en centre-bourg 1" loading="lazy">
+          <p>Lutter contre la vacance des logements en centre-bourg 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Port-Sainte-Marie ( Lutter contre la vacance des logements en centre-bourg 2).png" alt="Lutter contre la vacance des logements en centre-bourg 2" loading="lazy">
+          <p>Lutter contre la vacance des logements en centre-bourg 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Sainte-Livrade-sur-Lot ( Aménagement des berges du Lot et du quai d’Alsace 1).png" alt="Aménagement des berges du Lot et du quai d’Alsace 1" loading="lazy">
+          <p>Aménagement des berges du Lot et du quai d’Alsace 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Sainte-Livrade-sur-Lot ( Aménagement des berges du Lot et du quai d’Alsace 2).png" alt="Aménagement des berges du Lot et du quai d’Alsace 2" loading="lazy">
+          <p>Aménagement des berges du Lot et du quai d’Alsace 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Villeréal ( Requalification et valorisation des boulevards de la bastide 1).png" alt="Requalification et valorisation des boulevards de la bastide 1" loading="lazy">
+          <p>Requalification et valorisation des boulevards de la bastide 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Villeréal ( Requalification et valorisation des boulevards de la bastide 2).png" alt="Requalification et valorisation des boulevards de la bastide 2" loading="lazy">
+          <p>Requalification et valorisation des boulevards de la bastide 2</p>
+        </div>
+      </div>
     </div>
     <div style="text-align: center; margin-top: 40px;">
       <a href="#projets" class="back-btn" role="button" aria-label="Retour aux projets">Retour aux projets</a>
