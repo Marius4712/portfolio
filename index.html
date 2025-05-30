@@ -122,11 +122,11 @@
     .accueil-content {
       z-index: 1;
       text-align: center;
-      animation: fadeIn 1s ease-in;
+      animation: fadeIn 1s ease-out;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -248,6 +248,12 @@
       flex-wrap: wrap;
       gap: 40px;
       align-items: flex-start;
+    }
+
+    .project-content p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 15px;
     }
 
     .back-btn {
@@ -544,11 +550,11 @@
         <p>Participation à l'édition 2024 du Festival des Solidarités</p>
       </div>
       <div class="projet" onclick="showStagesDetails()" role="button" aria-label="Voir les détails de Mes stages">
-        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mes stages" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mes stages" loading="lazy">
         <h3>Mes stages</h3>
       </div>
       <div class="projet" onclick="showRoyanDetails()" role="button" aria-label="Voir les détails de Collaboration avec la mairie de Royan">
-        <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Collaboration avec la mairie de Royan" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d403?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Collaboration avec la mairie de Royan" loading="lazy">
         <h3>Collaboration avec la mairie de Royan</h3>
       </div>
       <div class="projet" onclick="showFichesDetails()" role="button" aria-label="Voir les détails de Fiches-projets de revitalisation">
@@ -585,13 +591,16 @@
 
   <!-- Détails Mes stages -->
   <section id="stages-details" role="region" aria-labelledby="stages-heading">
-    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Image de couverture Mes stages" class="project-cover">
+    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Image de couverture Mes stages" class="project-cover">
     <div class="project-header">
       <h2 id="stages-heading">Mes stages</h2>
       <p>Détails du projet Mes stages</p>
     </div>
     <div class="project-content">
-      <!-- Contenu vide -->
+      <p>Au fil de ma formation, j’ai eu l’occasion d’effectuer deux stages complémentaires qui m’ont permis de découvrir de manière concrète les outils de l’aménagement local et le fonctionnement des politiques publiques territoriales.</p>
+      <p>Le premier s’est déroulé à la mairie de Miramont-de-Guyenne, au sein du service développement territorial. J’y ai découvert les bases des dispositifs d’appui à la revitalisation des centres-bourgs, notamment à travers l’Opération de Revitalisation du Territoire (ORT). Ce stage a marqué un vrai tournant dans ma compréhension des enjeux locaux : j’ai pris conscience de l’importance de l’ingénierie territoriale pour accompagner les communes rurales face aux problématiques de vacance commerciale, d’habitat dégradé ou de dévitalisation des centres. C’est aussi à cette occasion que j’ai pu observer les premières étapes de montage d’un projet urbain : diagnostic de territoire, recueil de données, élaboration d’un programme d’actions. Ce premier contact avec l’action publique locale m’a donné envie d’approfondir ces questions.</p>
+      <p>J’ai donc choisi, l’année suivante, d’effectuer un second stage plus approfondi à la Direction Départementale des Territoires du Lot-et-Garonne, au sein du service Urbanisme et Habitat. Ce stage m’a permis d’aller plus loin dans l’analyse des dispositifs nationaux, en particulier les programmes Petites Villes de Demain et Villages d’Avenir, mis en place pour accompagner les territoires en perte d’attractivité. J’ai participé activement à plusieurs missions concrètes : réalisation de fiches projets destinées à valoriser les actions menées dans les communes, création de tableaux de recensement pour suivre l’état d’avancement des projets, cartographie de certaines opérations relevant des ORT, et mise en forme d’outils de communication à destination des élus. Ces tâches m’ont permis d’acquérir une méthodologie rigoureuse, de manipuler des données variées, mais aussi de mieux comprendre le rôle de l’État local dans l’accompagnement des collectivités.</p>
+      <p>Ces deux expériences ont été extrêmement formatrices. Elles m’ont permis de passer d’une approche théorique à une lecture plus fine et réaliste des enjeux de terrain. Elles ont aussi renforcé mon intérêt pour les démarches de revitalisation à l’échelle locale et m’ont donné envie de m’impliquer, à l’avenir, dans des missions qui lient stratégie territoriale, accompagnement des élus et mise en œuvre concrète de projets.</p>
     </div>
     <div style="text-align: center; margin-top: 40px;">
       <a href="#projets" class="back-btn" role="button" aria-label="Retour aux projets">Retour aux projets</a>
@@ -600,13 +609,14 @@
 
   <!-- Détails Collaboration avec la mairie de Royan -->
   <section id="royan-details" role="region" aria-labelledby="royan-heading">
-    <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Image de couverture Collaboration avec la mairie de Royan" class="project-cover">
+    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d403?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Image de couverture Collaboration avec la mairie de Royan" class="project-cover">
     <div class="project-header">
       <h2 id="royan-heading">Collaboration avec la mairie de Royan</h2>
       <p>Détails du projet Collaboration avec la mairie de Royan</p>
     </div>
     <div class="project-content">
-      <!-- Contenu vide -->
+      <p>Depuis l’année dernière, je mène avec la mairie de Royan une collaboration entièrement tournée vers le marais de Pontaillac. Notre objectif est double : d’abord mieux comprendre cet écosystème, puis trouver des moyens concrets de le préserver. Pour amorcer cette démarche, j’ai conçu une balade pédagogique : un petit parcours qui invite les habitants et les visiteurs à découvrir le marais tout en leur donnant les clés pour en protéger la faune et la flore.</p>
+      <p>La balade est prête et sera bientôt testée sur le terrain ; ce galop d’essai nous permettra de vérifier la cohérence du tracé, la clarté des messages et, surtout, l’effet de prise de conscience que nous recherchons. À terme, cette promenade doit devenir un outil simple, accessible à tous, pour ancrer la préservation du marais de Pontaillac dans les habitudes et la culture locales.</p>
     </div>
     <div style="text-align: center; margin-top: 40px;">
       <a href="#projets" class="back-btn" role="button" aria-label="Retour aux projets">Retour aux projets</a>
@@ -621,6 +631,11 @@
       <p>Détails du projet Fiches-projets de revitalisation</p>
     </div>
     <div class="project-content">
+      <p>Quand je conçois une fiche projet, je la pense comme un passeport qu’on ouvre en deux secondes : il faut que la personne qui la tient sache tout de suite où l’initiative se situe, sous quel programme elle s’inscrit et quel problème elle résout. J’attaque donc toujours par un bandeau-titre illustré, histoire d’annoncer la couleur et de donner du relief visuel. Juste en dessous, je place trois repères fixes – localisation, dispositif de financement, thématique – chacun accompagné d’une icône. Ce trio fait office de boussole : le lecteur a déjà les coordonnées principales avant même d’entrer dans le récit.</p>
+      <p>Vient alors un paragraphe très court, presque un slogan, qui résume l’enjeu : dans mon exemple sur le « Tiers Lieu 4 Cantons », je dis que le projet crée un espace de mixité pour l’artisanat, le commerce, le travail et le spectacle, et qu’il renforce l’attractivité locale. C’est la ligne-force ; tout le reste doit en découler.</p>
+      <p>Pour donner du concret sans plomber la page, j’enchaîne ensuite avec des listes à puces : d’abord les objectifs (ce que le projet cherche à offrir ou à dynamiser), puis les spécificités (ce qui le rend unique : bail emphytéotique, présence d’un commerce de proximité, implication d’acteurs locaux, etc.). Ce format ultra lisible permet de glisser des détails opérationnels sans perdre ceux qui lisent en diagonale.</p>
+      <p>Les chiffres qui comptent – population touchée, coût estimatif, parcelles concernées – je les détache dans des encarts colorés. Ça saute aux yeux ; les décideurs peuvent scanner la section, repérer immédiatement le montant de 720 000 € HT ou le bassin de 16 993 habitants et se faire une première idée du ratio impact/investissement.</p>
+      <p>Enfin, je n’oublie jamais l’ancrage territorial : une petite carte de la Nouvelle-Aquitaine et deux lignes de contexte suffisent pour rappeler le paysage dans lequel le projet va s’inscrire. Tout est calibré pour tenir en une page (deux au maximum) afin que la fiche puisse circuler facilement en réunion, servir de support de pitch oral ou accompagner un dossier de subvention. Bref, mes fiches projets sont des condensés : claires, attractives et prêtes à convaincre.</p>
       <div class="gallery">
         <div class="gallery-item">
           <img src="https://raw.githubusercontent.com/username/repository/main/images/1.png" alt="Image 1" loading="lazy">
@@ -740,62 +755,62 @@
         </div>
         <div class="gallery-item">
           <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet La Miramont-de-Guyenne (Parc des équipements du boulevard Jules Ferry  théâtre de verdure et scène ouverte à Miramont 2  ).png" alt="Parc des équipements du boulevard Jules Ferry théâtre de verdure et scène ouverte à Miramont 2" loading="lazy">
-          <p>Parc des équipements du boulevard Jules Ferry théâtre de verdure et scène ouverte à Miramont 2</p>
+          <p>Parc des équipements du boulevard Jules Ferry théâtre de verdure et scène ouverte à Miramont 2 </p>
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet La Miramont-de-Guyenne (RECONVERSION DE LA FRICHE POINT SERVICE EN HABITAT SÉNIOR 1  ).png" alt="Reconversion de la friche Point Service en habitat sénior 1" loading="lazy">
-          <p>Reconversion de la friche Point Service en habitat sénior 1</p>
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet/La Miramont-de-Guyenne/(RECONVERSION/DE LA FRICHE POINT SERVICE EN HABITAT SÉNIOR/1 ).png" alt="Reconversion de la friche Point Service en habitat senior 1" loading="lazy">
+          <p>Reconversion de la friche Point Service en habitat senior 1</p>
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet La Miramont-de-Guyenne (RECONVERSION DE LA FRICHE POINT SERVICE EN HABITAT SÉNIOR 2  ).png" alt="Reconversion de la friche Point Service en habitat sénior 2" loading="lazy">
-          <p>Reconversion de la friche Point Service en habitat sénior 2</p>
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet/La Miramont-de-Guyenne/(RECONVERSION/DE LA FRICHE POINT SERVICE EN HABITAT SÉNIOR/2).png" alt="Reconversion de la friche Point Service en habitat senior 2" loading="lazy">
+          <p>Reconversion de la friche Point Service en habitat senior 2 </p>
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet La Miramont-de-Guyenne (Reconversion de l'îlot Soussial à Miramont-de-Guyenne 1  ).png" alt="Reconversion de l'îlot Soussial à Miramont-de-Guyenne 1" loading="lazy">
-          <p>Reconversion de l'îlot Soussial à Miramont-de-Guyenne 1</p>
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet/La Miramont-de-Guyenne/(Reconversion de l'îlot Soussial à Miramont-de-Guyenne/1).png" alt="Reconversion de l’îlot Soussial à Miramont-de-Guyenne 1" loading="lazy">
+          <p>Reconversion de l’îlot Soussial à Miramont-de-Guyenne 1</p>
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet La Miramont-de-Guyenne (Reconversion de l'îlot Soussial à Miramont-de-Guyenne 2  ).png" alt="Reconversion de l'îlot Soussial à Miramont-de-Guyenne 2" loading="lazy">
-          <p>Reconversion de l'îlot Soussial à Miramont-de-Guyenne 2</p>
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet/La Miramont-de-Guyenne/(Reconversion de l’îlot Soussial à Miramont-de-Guyenne 2).png" alt="Reconversion de l’îlot Soussial à Miramont-de-Guyenne 2" loading="lazy">
+          <p>Reconversion de l’îlot Soussial à Miramont-de-Guyenne 2 </p>
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Monflanquin ( Ecole maternelle - Requalification de la cour ) 1.png" alt="École maternelle - Requalification de la cour 1" loading="lazy">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet/Monflanquin/( Ecole maternelle - Requalification de la cour ) 1.png" alt="École maternelle - Requalification de la cour 1" loading="lazy">
           <p>École maternelle - Requalification de la cour 1</p>
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Monflanquin ( Ecole maternelle - Requalification de la cour ) 2.png" alt="École maternelle - Requalification de la cour 2" loading="lazy">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet/Monflanquin/( Ecole maternelle - Requalification de la cour ) 2.png" alt="École maternelle - Requalification de la cour 2" loading="lazy">
           <p>École maternelle - Requalification de la cour 2</p>
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Nérac ( RÉAMÉNAGEMENT DE LA PLACE DU FOIRAIL À NÉRAC 1).png" alt="Réaménagement de la place du Foirail à Nérac 1" loading="lazy">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet/Nérac/( RÉAMÉNAGEMENT DE LA PLACE DU FOIRAIL À NÉRAC/1).png" alt="Réaménagement de la place du Foirail à Nérac 1" loading="lazy">
           <p>Réaménagement de la place du Foirail à Nérac 1</p>
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Nérac ( RÉAMÉNAGEMENT DE LA PLACE DU FOIRAIL À NÉRAC 2 ).png" alt="Réaménagement de la place du Foirail à Nérac 2" loading="lazy">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet/Nérac/( RÉAMÉNAGEMENT DE LA PLACE DU FOIRAIL À NÉRAC/2).png" alt="Réaménagement de la place du Foirail à Nérac 2" loading="lazy">
           <p>Réaménagement de la place du Foirail à Nérac 2</p>
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Port-Sainte-Marie ( Lutter contre la vacance des logements en centre-bourg 1).png" alt="Lutter contre la vacance des logements en centre-bourg 1" loading="lazy">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet/Port-Sainte-Marie/( Lutter contre la vacance des logements en centre-bourg/1).png" alt="Lutter contre la vacance des logements en centre-bourg 1" loading="lazy">
           <p>Lutter contre la vacance des logements en centre-bourg 1</p>
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Port-Sainte-Marie ( Lutter contre la vacance des logements en centre-bourg 2).png" alt="Lutter contre la vacance des logements en centre-bourg 2" loading="lazy">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet/Port-Sainte-Marie/( Lutter contre la vacance des logements en centre-bourg/2).png" alt="Lutter contre la vacance des logements en centre-bourg 2" loading="lazy">
           <p>Lutter contre la vacance des logements en centre-bourg 2</p>
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Sainte-Livrade-sur-Lot ( Aménagement des berges du Lot et du quai d’Alsace 1).png" alt="Aménagement des berges du Lot et du quai d’Alsace 1" loading="lazy">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet/Sainte-Livrade-sur-Lot/( Aménagement des berges du Lot et du quai d’Alsace/1).png" alt="Aménagement des berges du Lot et du quai d’Alsace 1" loading="lazy">
           <p>Aménagement des berges du Lot et du quai d’Alsace 1</p>
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Sainte-Livrade-sur-Lot ( Aménagement des berges du Lot et du quai d’Alsace 2).png" alt="Aménagement des berges du Lot et du quai d’Alsace 2" loading="lazy">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet/Sainte-Livrade-sur-Lot/( Aménagement des berges du Lot et du quai d’Alsace/2).png" alt="Aménagement des berges du Lot et du quai d’Alsace 2" loading="lazy">
           <p>Aménagement des berges du Lot et du quai d’Alsace 2</p>
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Villeréal ( Requalification et valorisation des boulevards de la bastide 1).png" alt="Requalification et valorisation des boulevards de la bastide 1" loading="lazy">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet/Villeréal/( Requalification et valorisation des boulevards de la bastide/1).png" alt="Requalification et valorisation des boulevards de la bastide 1" loading="lazy">
           <p>Requalification et valorisation des boulevards de la bastide 1</p>
         </div>
         <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet Villeréal ( Requalification et valorisation des boulevards de la bastide 2).png" alt="Requalification et valorisation des boulevards de la bastide 2" loading="lazy">
+          <img src="https://raw.githubusercontent.com/username/repository/main/images/fiche projet/Villeréal/( Requalification et valorisation des boulevards de la bastide/2).png" alt="Requalification et valorisation des boulevards de la bastide 2" loading="lazy">
           <p>Requalification et valorisation des boulevards de la bastide 2</p>
         </div>
       </div>
@@ -848,7 +863,7 @@
   </footer>
 
   <script>
-    // Gestion de l'affichage des détails des projets
+    // Gestion de l’affichage des détails des projets
     function showFestisolDetails() {
       hideAllSections();
       document.getElementById('festisol-details').classList.add('active');
@@ -923,8 +938,8 @@
     document.getElementById('contact-form').addEventListener('submit', function(e) {
       const name = this.querySelector('#name').value.trim();
       const email = this.querySelector('#email').value.trim();
-      const message = this.querySelector('#message').value.trim();
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const messageContent = this.querySelector('#message').value.trim();
+      const emailRegex = /^[^\s]+@[^\s@]+\.[^\s@]+$/;
 
       if (!name || !email || !message) {
         e.preventDefault();
